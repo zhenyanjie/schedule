@@ -4,6 +4,7 @@
 
 ## Environment
 
+```
 CPU model            : Intel(R) Core(TM) i5-6500 CPU @ 3.20GHz
 Number of cores      : 4
 L1d cache            : 32K
@@ -13,6 +14,7 @@ L3 cache:            : 6144K
 OS                   : Ubuntu precise (12.04.5)
 Arch                 : i686 (32 Bit)
 Kernel               : 3.8.8
+```
 
 * interferences
 	- `sysbench --test=cpu --cpu-max-prime=250000 run` on core 0
