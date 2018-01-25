@@ -24,6 +24,19 @@ Kernel               : 3.8.8
 * load generator
 	- [`wrk -t4 -c800 -d300s --latency http://127.0.0.1:8000/index.html`](https://github.com/wg/wrk) on core 3
 
+Using COLORIS with `insmod alloc.ko apps=sysbench,cachebench,python,wrk qos_pair=100,80,100,80,60,0,70,30` according to README of COLORIS:
+```
+Module usage:
+insmod alloc.ko apps=... qos_pair=...
+For apps parameter, pass in applications' process names (as in 
+task_struct->comm);
+For qos_pair, pass in application-specific QoS requirement (high thred, 
+low thred), which should be integers no larger than 100; set to any 
+negative integer if want to use system-wide thresholds;
+e.g.
+insmod alloc.ko apps=gobmk,hmmer qos_pair=70,30,-1,-1
+```
+
 ## Result
 
 ### No COLORIS, No Interference
